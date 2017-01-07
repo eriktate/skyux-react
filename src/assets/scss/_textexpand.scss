@@ -1,0 +1,24 @@
+﻿.bb-text-expand-ellipsis {
+    letter-spacing: 2px;
+    white-space: nowrap;
+    margin-right: 3px;
+}
+
+.bb-text-expand-space {
+    white-space: normal;
+}
+
+.bb-text-expand-see-more {
+    white-space: nowrap;
+}
+
+.bb-text-expand-text {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.bb-text-expand-container {
+  word-break: break-word;
+  word-wrap: break-word;
+  max-width: 100%;
+}

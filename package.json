@@ -1,0 +1,30 @@
+{
+  "name": "skyux-react",
+  "version": "0.0.1",
+  "description": "A React alternative to Blackbaud's SkyUX with sane defaults.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --port 8081 --progress --inline --hot"
+  },
+  "author": "Erik Tate",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "eslint": "^3.13.0",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.0.0",
+    "eslint-plugin-react": "^6.8.0",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-bootstrap": "^0.30.7",
+    "react-dom": "^15.4.2"
+  }
+}
