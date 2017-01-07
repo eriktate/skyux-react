@@ -1,0 +1,227 @@
+@import "Bootstrap/variables";
+@import "mixins";
+
+
+.modal-header {
+    min-height: 45px;
+    background: $form-background;
+    display: flex;
+    align-items: center;
+
+    .bb-dialog-header {
+        white-space: nowrap;
+        -ms-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 80%;
+        float: left;
+        line-height: 1.4; /* Keeps font descenders from being cut off */
+        font-family: $font-family-base;
+        font-weight: 600;
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .bb-helpbutton {
+        font-size: 16px;
+        margin-right: 20px;
+        margin-left: auto;
+    }
+
+    .close {
+        margin-left: auto;
+    }
+
+    .bb-helpbutton+.close {
+        margin-left: 0;
+    }
+
+}
+
+.modal-body {
+    padding: 15px;
+}
+
+.modal-body-tiled,
+.bb-modal-body-tiled {
+    background-color: $tile-form-background;
+}
+
+.modal {
+    -webkit-overflow-scrolling: auto;
+}
+
+.modal-footer {
+    padding: 19px;
+    margin: 0;
+    text-align: left;
+    background: $form-background;
+    
+    .btn+.btn {
+        margin-left: 10px;
+    }
+}
+
+.bb-modal {
+    overflow-y: hidden;
+
+    .modal-body {
+        overflow-y: auto;
+    }
+}
+
+.bb-modal-fullpage {
+    opacity: 0;
+    transition: opacity $bb-transition-time-short;
+
+    &.modal.in {
+        opacity: 1;
+        @include transform(none);
+
+        .modal-dialog {
+            @include transform(none);
+        }
+    }
+
+    &.modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .modal-dialog {
+        margin: 0;
+        width: 100%;
+    }
+
+    .modal-content {
+        border: none;
+    }
+
+    .modal-dialog,
+    .modal-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .modal-header,
+    .modal-footer {
+        position: fixed;
+        left: 0;
+        width: 100%;
+        z-index: 10000;
+    }
+
+    .modal-header {
+        top: 0;
+
+        .bb-dialog-header {
+            @include bb-section-heading;
+        }
+
+        .close,
+        .bb-helpbutton {
+            font-size: 20px;
+            margin-top: 6px;
+        }
+    }
+
+    .modal-footer {
+        bottom: 0;
+    }
+
+    .modal-body {
+        overflow: visible;
+        top: 0;
+        bottom: 0;
+    }
+}
+
+.bb-modal-open-fullpage {
+    &.modal-open {
+        overflow: auto;
+
+        .modal {
+            overflow: visible;
+        }
+        bb-page {
+            display: none;
+        }
+    }
+}
+
+.bb-modal-open-mobile {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+
+    .bb-modal {
+        position: absolute;
+    }
+}
+
+.bb-modal-content-wrapper {
+    background: $form-background;
+    border-top: 1px solid $form-border-color;
+
+    .radio label, .checkbox label {
+        display: inline-block;
+        margin-top: 1px;
+        margin-bottom: 0;
+    }
+
+    .form-horizontal {
+        .radio,
+        .checkbox {
+            min-height: 18px;
+        }
+    }
+
+    .control-label {
+        text-align: left;
+        font-family: $font-family-base;
+        font-size: $font-size-base;
+        font-weight: normal;
+        min-width: 150px;
+        vertical-align: middle;
+    }
+
+    .control-placeholder-label {
+        color: $gray-light;
+        font-style: italic;
+    }
+
+    textarea {
+        width: 100%;
+        resize: none;
+        border: 1px solid $form-textarea-color;
+        font-size: $font-size-base;
+        height: 10em;
+        padding: 5px;
+    }
+
+    div.textarea-container {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .control-label.required:after {
+        content: "*";
+        color: $bb-error-color;
+        padding-left: 5px;
+    }
+}
+
+.bb-modal-fullpage-backdrop {
+    background-color: $bb-color-white;
+    &.in {
+        opacity: 1;
+    }
+}

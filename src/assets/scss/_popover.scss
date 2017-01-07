@@ -1,0 +1,9 @@
+[bb-uib-popover-popup].popover,
+[bb-uib-popover-html-popup].popover,
+[bb-uib-popover-template-popup].popover {
+  display: block !important;
+}
+
+.bb-popover-list {
+    z-index: $bb-zindex-popover-list;
+}
